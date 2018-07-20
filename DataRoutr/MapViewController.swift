@@ -327,6 +327,7 @@ class MapViewController: UIViewController, UITextFieldDelegate {
     @objc func meteoriteDetail() {
         if selectedMeteorite != nil {
             performSegue(withIdentifier: "meteoriteSegue", sender: self)
+            mapView.deselectAnnotation(mapView.selectedAnnotations.first, animated: true)
         }
     }
     
@@ -365,17 +366,17 @@ extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         
         
-        for annotationDeselect in mapView.annotations {
-            if let annotation = view.annotation {
-                if annotationDeselect.isEqual(annotation){
-                    mapView.view(for: annotation)?.isEnabled = true
-                }else {
-                    if let notSelfAnnotation = annotationDeselect as? MeteoriteAnnotation {
-                        mapView.view(for: notSelfAnnotation)?.isHidden = true
-                    }
-                }
-            }
-        }
+//        for annotationDeselect in mapView.annotations {
+//            if let annotation = view.annotation {
+//                if annotationDeselect.isEqual(annotation){
+//                    mapView.view(for: annotation)?.isEnabled = true
+//                }else {
+//                    if let notSelfAnnotation = annotationDeselect as? MeteoriteAnnotation {
+//                        mapView.view(for: notSelfAnnotation)?.isHidden = true
+//                    }
+//                }
+//            }
+//        }
         
         if let annotation = view.annotation as? MeteoriteAnnotation {
             
