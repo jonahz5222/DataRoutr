@@ -65,6 +65,10 @@ class MapViewController: UIViewController, UITextFieldDelegate {
         destinationLocationField.delegate = self
         destinationLocationField.clearButtonMode = .whileEditing
         
+        // Swipe Setup
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
+        swipeDown.direction = UISwipeGestureRecognizerDirection.down
+        self.view.addGestureRecognizer(swipeDown)
     }
 
     override func didReceiveMemoryWarning() {
@@ -181,6 +185,14 @@ class MapViewController: UIViewController, UITextFieldDelegate {
             mapView.setRegion(region, animated: true)
             
         }
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.mapView.isUserInteractionEnabled = false
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.mapView.isUserInteractionEnabled = true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -315,6 +327,12 @@ class MapViewController: UIViewController, UITextFieldDelegate {
     @objc func meteoriteDetail() {
         if selectedMeteorite != nil {
             performSegue(withIdentifier: "meteoriteSegue", sender: self)
+        }
+    }
+    
+    @objc func respondToSwipeGesture() {
+        if destinationLocationField.isEditing {
+            destinationLocationField.resignFirstResponder()
         }
     }
 }

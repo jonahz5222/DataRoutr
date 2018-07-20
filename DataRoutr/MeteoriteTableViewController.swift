@@ -121,6 +121,7 @@ class MeteoriteTableViewController: UITableViewController {
                 destination.yearText = year
                 destination.coordinatesText = location
                 destination.addRouteButtonIsEnabled = false
+                destination.meteorite = Singletons.sharedInstance.selectedMeteorites[tableView.indexPathForSelectedRow?.row ?? 0]
                 
                 
             }
