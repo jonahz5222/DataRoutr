@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55AA4DE821016464007E68E1 /* meteorites.json in Resources */ = {isa = PBXBuildFile; fileRef = 55AA4DE721016464007E68E1 /* meteorites.json */; };
+		55AA4DEA21016497007E68E1 /* Meteorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AA4DE921016497007E68E1 /* Meteorite.swift */; };
+		55AA4DF021018965007E68E1 /* MeteoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AA4DEF21018965007E68E1 /* MeteoriteViewController.swift */; };
+		55AA4DF221019C21007E68E1 /* MeteoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AA4DF121019C21007E68E1 /* MeteoriteTableViewController.swift */; };
 		55F6CA072100D7F600E48728 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F6CA062100D7F600E48728 /* AppDelegate.swift */; };
 		55F6CA0C2100D7F600E48728 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55F6CA0A2100D7F600E48728 /* Main.storyboard */; };
 		55F6CA0F2100D7F600E48728 /* DataRoutr.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55F6CA0D2100D7F600E48728 /* DataRoutr.xcdatamodeld */; };
@@ -35,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		55AA4DE721016464007E68E1 /* meteorites.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = meteorites.json; sourceTree = "<group>"; };
+		55AA4DE921016497007E68E1 /* Meteorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meteorite.swift; sourceTree = "<group>"; };
+		55AA4DEF21018965007E68E1 /* MeteoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoriteViewController.swift; sourceTree = "<group>"; };
+		55AA4DF121019C21007E68E1 /* MeteoriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoriteTableViewController.swift; sourceTree = "<group>"; };
 		55F6CA032100D7F600E48728 /* DataRoutr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataRoutr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55F6CA062100D7F600E48728 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55F6CA0B2100D7F600E48728 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -102,10 +110,14 @@
 				55F6CA062100D7F600E48728 /* AppDelegate.swift */,
 				55F6CA0A2100D7F600E48728 /* Main.storyboard */,
 				55F6CA392100DAE200E48728 /* MapViewController.swift */,
+				55AA4DEF21018965007E68E1 /* MeteoriteViewController.swift */,
+				55AA4DF121019C21007E68E1 /* MeteoriteTableViewController.swift */,
 				55F6CA102100D7F700E48728 /* Assets.xcassets */,
 				55F6CA122100D7F700E48728 /* LaunchScreen.storyboard */,
 				55F6CA152100D7F700E48728 /* Info.plist */,
 				55F6CA0D2100D7F600E48728 /* DataRoutr.xcdatamodeld */,
+				55AA4DE721016464007E68E1 /* meteorites.json */,
+				55AA4DE921016497007E68E1 /* Meteorite.swift */,
 			);
 			path = DataRoutr;
 			sourceTree = "<group>";
@@ -232,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55AA4DE821016464007E68E1 /* meteorites.json in Resources */,
 				55F6CA142100D7F700E48728 /* LaunchScreen.storyboard in Resources */,
 				55F6CA112100D7F700E48728 /* Assets.xcassets in Resources */,
 				55F6CA0C2100D7F600E48728 /* Main.storyboard in Resources */,
@@ -259,6 +272,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55AA4DF221019C21007E68E1 /* MeteoriteTableViewController.swift in Sources */,
+				55AA4DEA21016497007E68E1 /* Meteorite.swift in Sources */,
+				55AA4DF021018965007E68E1 /* MeteoriteViewController.swift in Sources */,
 				55F6CA0F2100D7F600E48728 /* DataRoutr.xcdatamodeld in Sources */,
 				55F6CA3A2100DAE200E48728 /* MapViewController.swift in Sources */,
 				55F6CA072100D7F600E48728 /* AppDelegate.swift in Sources */,
@@ -435,6 +451,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 89YGS6UCLW;
 				INFOPLIST_FILE = DataRoutr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -452,6 +469,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 89YGS6UCLW;
 				INFOPLIST_FILE = DataRoutr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
