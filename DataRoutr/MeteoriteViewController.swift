@@ -9,13 +9,15 @@
 import UIKit
 import MapKit
 
-class MeteoriteViewController: UIViewController {
+class MeteoriteViewController: UIViewController, MKMapViewDelegate {
 
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var classLabel: UILabel!
     @IBOutlet weak var massLabel: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var coordinatesLabel: UILabel!
     @IBOutlet weak var addRouteButton: UIButton!
+    @IBOutlet weak var satelliteMapView: MKMapView!
     
     var titleText = "Meteorite"
     var classText = "No Class"
@@ -28,12 +30,22 @@ class MeteoriteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        satelliteMapView.delegate = self
+        satelliteMapView.mapType = .satellite
+        
+        if let latitude = Double(meteorite.reclat ?? "0"),
+            let longitude = Double(meteorite.reclong ?? "0") {
+            let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+            let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), span: span)
+            satelliteMapView.setRegion(region, animated: false)
+        }
+        
 
-        navigationItem.title = titleText
-        classLabel.text = "Class: " + classText
-        massLabel.text = "Mass: " + massText
-        yearLabel.text = "Year: " + yearText
-        coordinatesLabel.text = "Coords: " + coordinatesText
+        titleLabel.text = titleText
+        classLabel.text = classText
+        massLabel.text = massText
+        yearLabel.text = yearText
+        coordinatesLabel.text = coordinatesText
         
         if addRouteButtonIsEnabled {
             addRouteButton.isEnabled = true
